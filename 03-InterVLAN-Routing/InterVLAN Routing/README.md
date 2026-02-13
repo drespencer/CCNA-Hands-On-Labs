@@ -12,11 +12,5 @@ A router connects to a multilayer switch using subinterfaces. Multiple VLANs are
 - Default gateway assignments
 - Inter-VLAN troubleshooting
 
-## Verification Commands
-- show ip interface brief
-- show interfaces g0/0.<subinterface>
-- show vlan brief
-- ping between VLANs
-
 ## Troubleshooting Notes
 I diagnosed issues such as missing encapsulation, incorrect IP addressing, and gateway misconfigurations that prevented inter-VLAN communication.
