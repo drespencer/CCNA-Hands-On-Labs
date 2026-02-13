@@ -12,10 +12,5 @@ This lab uses a simple multi-switch environment to demonstrate VLAN creation, ac
 - Verifying VLAN membership across switches
 - Testing communication between devices in the same and different VLANs
 
-## Verification Commands
-show vlan brief  
-show interfaces switchport   
-show interfaces trunk  
-
 ## Troubleshooting Notes
 I validated that devices in the same VLAN could communicate and confirmed isolation between different VLANs. I also checked trunk links to ensure VLANs were allowed and propagated correctly.
