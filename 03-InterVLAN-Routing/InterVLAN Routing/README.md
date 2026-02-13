@@ -1,16 +1,16 @@
-# Inter-VLAN Routing Labs
+# InterVLAN Routing Labs
 
 ## Purpose
-These labs focus on enabling communication between VLANs using router-on-a-stick and troubleshooting multi-VLAN environments.
+In this lab set, I focused on enabling communication between VLANs using Router-on-a-Stick and Layer 3 switching. My goal was to understand how routing integrates with VLAN segmentation.
 
 ## Topology Overview
-A router connects to a multilayer switch using subinterfaces. Multiple VLANs are configured across access switches.
+These labs use a combination of routers and multilayer switches to demonstrate subinterfaces, SVIs, and inter-VLAN routing behavior.
 
 ## Key Configurations
-- Router-on-a-stick subinterfaces
-- Encapsulation dot1Q settings
-- Default gateway assignments
-- Inter-VLAN troubleshooting
+- Creating subinterfaces for Router-on-a-Stick
+- Assigning IP addresses to SVIs
+- Enabling routing on multilayer switches
+- Testing communication between VLANs
 
 ## Troubleshooting Notes
-I diagnosed issues such as missing encapsulation, incorrect IP addressing, and gateway misconfigurations that prevented inter-VLAN communication.
+I confirmed that trunk links were configured correctly, validated SVI status, and ensured that routing tables reflected the expected inter-VLAN paths.
