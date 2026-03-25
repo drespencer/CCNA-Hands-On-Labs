@@ -4,7 +4,7 @@ This folder contains my hands‑on Linux practice labs. My goal is to build conf
 
 Each lab focuses on a specific task or scenario, giving me a chance to practice real‑world workflows and build muscle memory with core Linux commands.
 
-Topics Covered
+Topics Covered:
 
 File and directory management
 
@@ -26,7 +26,7 @@ Networking commands
 
 Log inspection and troubleshooting
 
-Lab Structure
+Lab Structure:
 
 Each lab folder includes:
 
@@ -42,7 +42,7 @@ Troubleshooting Notes - Issues I ran into and how I resolved them
 
 This keeps my documentation consistent with the rest of my CCNA‑Hands‑On‑Labs repo.
 
-Environment Used
+Environment Used:
 
 Ubuntu Server / Desktop (depending on the lab)
 
@@ -52,7 +52,7 @@ Terminal‑based workflow
 
 Standard GNU/Linux utilities
 
-Skills Demonstrated
+Skills Demonstrated:
 
 Command‑line proficiency
 
@@ -64,7 +64,7 @@ Troubleshooting using logs and built‑in tools
 
 Applying best practices for permissions and user access
 
-How to Use This Folder
+How to Use This Folder:
 
 Each subfolder represents a standalone Linux lab. Open any lab to view:
 
