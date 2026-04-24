@@ -1,13 +1,7 @@
 Company Network Simulation – Packet Tracer Lab
 
 Overview
-This lab demonstrates a segmented enterprise network built in Cisco Packet Tracer. The design includes:
--A Trusted Internal LAN for employee workstations
--A DMZ hosting the company’s public web server
--An Untrusted Internet segment simulating external users
--A Gateway Router providing DHCP, routing, and NAT
--A DNS + Web Server hosting www.company.com
--An External Client accessing the company website from the Internet
+This lab demonstrates a segmented enterprise network built in Cisco Packet Tracer. The design includes: A Trusted Internal LAN for employee workstations. DMZ hosting the company’s public web server. An Untrusted Internet segment simulating external users. A Gateway Router providing DHCP, routing, and NAT. A DNS + Web Server hosting www.company.com. An External Client accessing the company website from the Internet.
 
 ***The goal is to show end‑to‑end connectivity between internal hosts, DMZ services, and external users.***
 
