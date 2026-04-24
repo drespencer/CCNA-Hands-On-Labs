@@ -10,87 +10,87 @@ The network is divided into three security zones:
 
 1. Internal LAN – 192.168.1.0/24 (Trusted)
 
-  PC0
+    PC0
 
-  PC1
+    PC1
   
-  Switch0 (2960)
+    Switch0 (2960)
   
-  Router0 G0/0 (Default Gateway: 192.168.1.1)
+    Router0 G0/0 (Default Gateway: 192.168.1.1)
 
 3. DMZ – 10.0.0.0/24 (Protected Server Network)
 
-  Server0 (Web + DNS) – 10.0.0.10
+    Server0 (Web + DNS) – 10.0.0.10
   
-  Switch1 (2960)
+    Switch1 (2960)
   
-  Router0 G0/1 (10.0.0.1)
+    Router0 G0/1 (10.0.0.1)
 
 5. Internet – 8.8.8.0/24 (Untrusted)
 
-  Router1 (ISP) – 8.8.8.1
+    Router1 (ISP) – 8.8.8.1
   
-  Access Point (Layer‑2 AP)
+    Access Point (Layer‑2 AP)
   
-  Laptop0 (External Client) – 8.8.8.50
+    Laptop0 (External Client) – 8.8.8.50
 
 7. Router‑to‑Router Link
 
-  Router0 S0/0/0 – 200.0.0.1
+    Router0 S0/0/0 – 200.0.0.1
   
-  Router1 S0/0/0 – 200.0.0.2
+    Router1 S0/0/0 – 200.0.0.2
 
-Device List
+***Device List***
 
-  Device Type	Quantity	Purpose
+   Device Type	Quantity	Purpose
 
-  Routers (2911)	2	Gateway + ISP
-
-  Switches (2960)	2	LAN + DMZ
+   Routers (2911)	2	Gateway + ISP
+   
+   Switches (2960)	2	LAN + DMZ
+   
+   Access Point	1	Wireless Internet client
   
-  Access Point	1	Wireless Internet client
+***PCs	2	Internal clients***
   
-  PCs	2	Internal clients
+   Laptop	1	External Internet client
+   
+   Server	1	Web + DNS
+
+***IP Addressing Plan***
+
+***Internal LAN***
+
+  Device	IP	Notes
+
+    Router0 G0/0	192.168.1.1	Default gateway
   
-  Laptop	1	External Internet client
+    PC0	DHCP	Assigned by Router0
   
-  Server	1	Web + DNS
+    PC1	DHCP	Assigned by Router0
 
-IP Addressing Plan
+***DMZ***
 
-Internal LAN
+  Device	IP	Notes
 
-Device	IP	Notes
-
-  Router0 G0/0	192.168.1.1	Default gateway
+    Router0 G0/1	10.0.0.1	DMZ gateway
   
-  PC0	DHCP	Assigned by Router0
+    Server0	10.0.0.10	Web + DNS
+
+***Internet***
+
+  Device	IP	Notes
+
+    Router1 G0/0	8.8.8.1	Internet gateway
   
-  PC1	DHCP	Assigned by Router0
+    Laptop0	8.8.8.50	Static external client
 
-DMZ
-
-Device	IP	Notes
-
-  Router0 G0/1	10.0.0.1	DMZ gateway
+***Router Link***
   
-  Server0	10.0.0.10	Web + DNS
-
-Internet
-
-Device	IP	Notes
-
-  Router1 G0/0	8.8.8.1	Internet gateway
+    Device	IP
   
-  Laptop0	8.8.8.50	Static external client
-
-Router Link
+      Router0 S0/0/0	200.0.0.1
   
-  Device	IP
-  
-  Router0 S0/0/0	200.0.0.1
-  
-  Router1 S0/0/0	200.0.0.2
+      Router1 S0/0/0	200.0.0.2
 
 Router0 Configuration (Gateway Router)
 
