@@ -249,7 +249,8 @@ How to simulate external Internet access in Packet Tracer
 
 How to use an Access Point as a simple wireless bridge
 
-Files Included
+
+***Files Included***
 
 Company_Network.pkt (Packet Tracer file)
 
