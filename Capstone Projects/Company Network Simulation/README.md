@@ -7,6 +7,7 @@ This lab demonstrates a segmented enterprise network built in Cisco Packet Trace
 
 Topology Summary
 The network is divided into three security zones:
+
 1. Internal LAN – 192.168.1.0/24 (Trusted)
   PC0
   PC1
