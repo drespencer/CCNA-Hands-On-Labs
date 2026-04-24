@@ -92,122 +92,121 @@ The network is divided into three security zones:
   
       Router1 S0/0/0	200.0.0.2
 
-Router0 Configuration (Gateway Router)
+***Router0 Configuration (Gateway Router)***
 
+    interface g0/0
+  
+      ip address 192.168.1.1 255.255.255.0
+  
+      no shutdown
 
-interface g0/0
+    interface g0/1
+      
+      ip address 10.0.0.1 255.255.255.0
   
-  ip address 192.168.1.1 255.255.255.0
-  
-  no shutdown
+      no shutdown
 
-interface g0/1
+    interface s0/0/0
   
-  ip address 10.0.0.1 255.255.255.0
+      ip address 200.0.0.1 255.255.255.252
   
-  no shutdown
+      clock rate 64000
+  
+      no shutdown
 
-interface s0/0/0
+***DHCP for Internal LAN***
   
-  ip address 200.0.0.1 255.255.255.252
+      ip dhcp pool INTERNAL
   
-  clock rate 64000
+      network 192.168.1.0 255.255.255.0
   
-  no shutdown
-
-DHCP for Internal LAN
+      default-router 192.168.1.1
   
-  ip dhcp pool INTERNAL
-  
-  network 192.168.1.0 255.255.255.0
-  
-  default-router 192.168.1.1
-  
-  dns-server 10.0.0.10
+      dns-server 10.0.0.10
  
-Default Route to ISP
+***Default Route to ISP***
   
-  ip route 0.0.0.0 0.0.0.0 200.0.0.2
+      ip route 0.0.0.0 0.0.0.0 200.0.0.2
 
-NAT Overload (PAT)
+***NAT Overload (PAT)***
 
-  access-list 1 permit 192.168.1.0 0.0.0.255
+      access-list 1 permit 192.168.1.0 0.0.0.255
   
-  ip nat inside source list 1 interface s0/0/0 overload
+      ip nat inside source list 1 interface s0/0/0 overload
   
-  interface g0/0  
+      interface g0/0  
   
-  ip nat inside
+      ip nat inside
   
-  interface s0/0/0
+      interface s0/0/0
 
-  ip nat outside
+      ip nat outside
 
-Router1 Configuration (ISP)
+***Router1 Configuration (ISP)***
 
-  Interfaces
+    Interfaces
   
-  interface g0/0
+        interface g0/0
   
-  ip address 8.8.8.1 255.255.255.0
+        ip address 8.8.8.1 255.255.255.0
   
-  no shutdown
+        no shutdown
 
-interface s0/0/0
+        interface s0/0/0
   
-  ip address 200.0.0.2 255.255.255.252
+        ip address 200.0.0.2 255.255.255.252
   
-  no shutdown
+        no shutdown
   
-Static Routes Back to Company
+***Static Routes Back to Company***
   
-  ip route 10.0.0.0 255.255.255.0 200.0.0.1
+      ip route 10.0.0.0 255.255.255.0 200.0.0.1
   
-  ip route 192.168.1.0 255.255.255.0 200.0.0.1
+      ip route 192.168.1.0 255.255.255.0 200.0.0.1
 
-Server Configuration (Web + DNS)
+***Server Configuration (Web + DNS)***
 
-IP Settings
+    IP Settings
 
-  IP: 10.0.0.10
+      IP: 10.0.0.10
   
-  Mask: 255.255.255.0
+      Mask: 255.255.255.0
   
-  Gateway: 10.0.0.1
+      Gateway: 10.0.0.1
   
-  DNS Records
+    DNS Records
 
-Name |	Type |	Value
+    Name |	Type |	Value
 
-company.com |	A |	10.0.0.10
+    company.com |	A |	10.0.0.10
 
-www.company.com |	CNAME |	company.com
+    www.company.com |	CNAME |	company.com
 
-HTTP Service
+    HTTP Service
 
-HTTP: ON
+    HTTP: ON
 
-Custom index.html page created
+    Custom index.html page created
 
-External Access Point Configuration
+***External Access Point Configuration***
 
-Connected to Router1 G0/0 via LAN port
+    Connected to Router1 G0/0 via LAN port
 
-DHCP: OFF
+        DHCP: OFF
 
-Acts as a Layer‑2 wireless bridge
+    Acts as a Layer‑2 wireless bridge
 
-Laptop0 Static IP
+    Laptop0 Static IP
 
-  IP: 8.8.8.50
+        IP: 8.8.8.50
   
-  Mask: 255.255.255.0
+        Mask: 255.255.255.0
   
-  Gateway: 8.8.8.1
+        Gateway: 8.8.8.1
   
-  DNS: 10.0.0.10
+        DNS: 10.0.0.10
 
-Verification
+***Verification***
 
 1. Internal Clients Ping Each Other
 
@@ -238,7 +237,7 @@ Verification
   ping 8.8.8.1
 
 
-Lessons I Learned:
+***Lessons I Learned:***
 
 How to segment networks using LAN, DMZ, and Internet zones
 
